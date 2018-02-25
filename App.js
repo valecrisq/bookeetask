@@ -1,22 +1,16 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import PeopleList from './list/PeopleList';
+import {View} from 'react-native';
+import PeopleContainer from "./People/PeopleContainer";
+import {StatusBar} from 'react-native';
+
 
 
 export default class App extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <PeopleList />
+            <View style={{marginTop: StatusBar.currentHeight}}>
+                <PeopleContainer />
             </View>
         );
     }
 }
-
-
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#f5f5f5',
-    },
-});
