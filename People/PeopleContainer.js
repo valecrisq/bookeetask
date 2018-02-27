@@ -11,7 +11,7 @@ export default class PeopleContainer extends React.Component {
         super(props);
         this.state = {
             items: [],
-            start: 0,
+            page: 1,
         };
 
     }
@@ -21,12 +21,12 @@ export default class PeopleContainer extends React.Component {
     }
 
     loadList() {
-        fetch('https://jsonplaceholder.typicode.com/users?_start=' + this.state.start)
+        fetch('https://randomuser.me/api/?results=10&page=' + this.state.page)
             .then((response) => response.json())
             .then((responsejson) => {
                 this.setState({
-                    items: this.state.items.concat(responsejson),
-                    start: this.state.start + 10,
+                    items: this.state.items.concat(responsejson.results),
+                    page: this.state.page + 1,
                 });
             });
     }
@@ -35,7 +35,7 @@ export default class PeopleContainer extends React.Component {
     emptyList() {
         this.setState({
             items: [],
-            start: 0,
+            page: 1
         });
     }
 

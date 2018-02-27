@@ -8,7 +8,7 @@ export default class PeopleList extends React.PureComponent {
 
         const list =
             <FlatList
-                onEndReachedThreshold={0.5}
+                onEndReachedThreshold={1}
                 onEndReached={(event) => this.props.onEndReached(event)}
                 keyExtractor={(item, index) => index}
                 data={this.props.items}
