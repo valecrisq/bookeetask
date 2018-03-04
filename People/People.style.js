@@ -2,24 +2,17 @@ import {StyleSheet} from 'react-native';
 
 const peopleStyle = StyleSheet.create({
     containerCard: {
-        marginTop: 20,
-        marginBottom: 20,
+
     },
     containerName: {
         alignSelf: 'flex-end',
-        borderColor: 'black',
-        borderRadius: 8,
-        borderWidth: 1,
-        padding: 5,
+        justifyContent: 'flex-end'
     },
-    containerEmail: {
-        fontFamily: 'serif',
-        fontSize: 18,
-    },
-    containerId: {
+    containerInfo: {
         fontFamily: 'serif',
         fontSize: 14,
-    }
+        alignSelf: 'flex-end'
+    },
 });
 
 export default peopleStyle;

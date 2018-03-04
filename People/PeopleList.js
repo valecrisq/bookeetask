@@ -4,10 +4,19 @@ import PeopleItem from "./PeopleItem";
 
 export default class PeopleList extends React.PureComponent {
 
+
+
     render() {
 
         const list =
+
             <FlatList
+                refreshing={this.props.refreshing}
+                onRefresh={(event) => this.props.onRefresh(event)}
+                refreshControl={
+                    colors="red",
+                    size= 6
+                }
                 onEndReachedThreshold={1}
                 onEndReached={(event) => this.props.onEndReached(event)}
                 keyExtractor={(item, index) => index}

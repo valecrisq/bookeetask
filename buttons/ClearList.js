@@ -9,7 +9,7 @@ export default class ClearList extends React.PureComponent {
             <View>
                 <ActionButton
                     color={'blue'}
-                    title={'Clear List'}
+                    title={'Close List'}
                     onPress={this.props.onPress} />
             </View>
         )

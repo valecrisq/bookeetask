@@ -12,6 +12,7 @@ export default class PeopleContainer extends React.Component {
         this.state = {
             items: [],
             page: 1,
+            refreshing: false
         };
 
     }
@@ -39,6 +40,18 @@ export default class PeopleContainer extends React.Component {
         });
     }
 
+    refreshList() {
+        this.setState({
+            refreshing: true,
+            items: [],
+            page: 1
+        });
+        this.loadList();
+        this.setState({
+            refreshing: false
+        })
+    }
+
 
     render() {
         return (
@@ -46,11 +59,15 @@ export default class PeopleContainer extends React.Component {
 
                 <LoadMoreItems onPress={() => this.loadList()}/>
                 {
-                    this.state.items.length > 0 &&
+                    this.state.items.length > 1 &&
                     <ClearList onPress={() => this.emptyList()}/>
                 }
 
-                <PeopleList onEndReached={() => this.loadList()} items={this.state.items}/>
+                <PeopleList
+                    onEndReached={() => this.loadList()}
+                    onRefresh={() => this.refreshList()}
+                    refreshing={this.state.refreshing}
+                    items={this.state.items}/>
 
             </View>
         );
