@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, View, RefreshControl} from 'react-native';
 import PeopleItem from "./PeopleItem";
 
 export default class PeopleList extends React.PureComponent {
@@ -11,11 +11,12 @@ export default class PeopleList extends React.PureComponent {
         const list =
 
             <FlatList
-                refreshing={this.props.refreshing}
-                onRefresh={(event) => this.props.onRefresh(event)}
                 refreshControl={
-                    colors="red",
-                    size= 6
+                    <RefreshControl
+                        refreshing={this.props.refreshing}
+                        onRefresh={(event) => this.props.onRefresh(event)}
+                        colors={['red']}
+                    />
                 }
                 onEndReachedThreshold={1}
                 onEndReached={(event) => this.props.onEndReached(event)}

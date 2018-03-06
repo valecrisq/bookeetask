@@ -64,11 +64,11 @@ export default class PeopleContainer extends React.Component {
                 }
 
                 <PeopleList
-                    onEndReached={() => this.loadList()}
                     onRefresh={() => this.refreshList()}
                     refreshing={this.state.refreshing}
-                    items={this.state.items}/>
-
+                    onEndReached={() => this.loadList()}
+                    items={this.state.items}
+                />
             </View>
         );
     }
