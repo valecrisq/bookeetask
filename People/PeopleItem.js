@@ -13,13 +13,13 @@ export default class PeopleItem extends React.PureComponent {
 
     render() {
         return (
-            <Card id={Math.floor(Math.random() * 10)} style={peopleStyle.containerCard}>
-
-                <View style={peopleStyle.containerContact}>
-
+            <Card>
+                <View style={peopleStyle.containerCard}>
                     <Image
                         style={{alignSelf: 'flex-start', width: 50, height: 50, borderRadius: 25}}
                         source={{uri: this.props.item.picture.thumbnail}}/>
+
+                    <View style={peopleStyle.containerContact}>
 
                         <Text style={peopleStyle.containerName}>
                             {this.capitalizeText(this.props.item.name.title) +
@@ -28,7 +28,7 @@ export default class PeopleItem extends React.PureComponent {
                         </Text>
 
                         <Text style={peopleStyle.containerInfo}>
-                            {'Date of Birth: ' + (this.props.item.dob.split(" ").slice(0))}
+                            {'Date of Birth: ' + (this.props.item.dob.split(" ")[0])}
                         </Text>
 
                         <Text style={peopleStyle.containerInfo}>
@@ -36,9 +36,8 @@ export default class PeopleItem extends React.PureComponent {
                             ', ' + this.capitalizeText(this.props.item.location.city) +
                             ', ' + this.capitalizeText(this.props.item.location.state)}
                         </Text>
-
+                    </View>
                 </View>
-
             </Card>
         )
     }

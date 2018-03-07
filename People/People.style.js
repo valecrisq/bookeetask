@@ -3,15 +3,19 @@ import {StyleSheet} from 'react-native';
 const peopleStyle = StyleSheet.create({
     containerCard: {
         display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     containerContact: {
         display: 'flex',
-
+        flexDirection: 'column',
+        height: 100,
+        flexGrow: 1
     },
     containerName: {
         alignSelf: 'flex-end',
-        justifyContent: 'flex-end',
         fontWeight: 'bold',
+        flexGrow: 1
     },
     containerInfo: {
         fontFamily: 'serif',
