@@ -9,7 +9,7 @@ export default class EmptyList extends React.PureComponent {
             <View>
                 <ActionButton
                     color={'red'}
-                    title={'Load Items'}
+                    title={'Show Friends'}
                     onPress={this.props.onPress} />
             </View>
         )

@@ -1,6 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import ActionButton from "./ActionButton";
+import {Icon} from 'react-native-elements';
 
 export default class ClearList extends React.PureComponent {
 
@@ -9,8 +10,13 @@ export default class ClearList extends React.PureComponent {
             <View>
                 <ActionButton
                     color={'blue'}
-                    title={'Close List'}
-                    onPress={this.props.onPress} />
+                    title={'Hide List'}
+                    onPress={this.props.onPress}
+                    icon={
+                        <Icon
+                            name={'arrow-expand-down'}
+                            color={'white'} /> }
+                    />
             </View>
         )
     }
