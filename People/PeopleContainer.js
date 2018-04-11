@@ -46,10 +46,12 @@ export default class PeopleContainer extends React.Component {
             items: [],
             page: 1
         });
-        this.loadList();
-        this.setState({
-            refreshing: false
-        })
+        this.loadList()
+            .then(() => {
+                this.setState({
+                    refreshing: false
+                })
+            })
     }
 
 
